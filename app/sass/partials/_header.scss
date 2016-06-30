@@ -1,0 +1,117 @@
+header {
+	width: 100%;
+	position: fixed;
+	background: #f1f1f1;
+	z-index: 10;
+	top: 0;
+	@include box-shadow(0, 1px, 8px, rgba(0, 0, 0, 0.5));
+	a.titulo-proyecto {
+		margin: 20px;
+		display: inline-block;
+	}
+	nav {
+		height: auto;
+		margin: 0 auto;
+		overflow: hidden;
+		.desplegar-menu .menu-activo {
+			opacity: 1;
+		}
+		#desplegar-menu {
+			display: inline-block;
+			padding: 22px;
+			float: right;
+			border: solid 1px;
+			margin: 6px;
+			position: absolute;
+			top: 0;
+			right: 0px;
+		}
+		img {
+			padding: 10px 10px 0 0;
+		}
+		#menu {
+			overflow: hidden;
+			clear: both;
+			ul {
+				width: 100%;
+				float:left;
+			}
+			.colapsar {
+				width: 100%;
+				max-height: 0;
+				overflow: hidden;
+				transition: max-height .4s;
+				background: #c4c4c4;
+				&.abrir-menu{
+					max-height: 400px;
+					transition: max-height .4s;
+				}
+				ul li {
+					width: 100%;
+					@include trancisiones(background, 1s, linear);
+					font-size:12px;
+					a {
+						padding: 0 20px;
+						line-height: 40px;
+					}
+					a:hover {
+						color: #909090;
+					}
+
+				}
+				.activo {
+					background: #ece4e4;
+					a {
+						color: #909090;
+					}
+				}
+				ul li:hover {
+					background: #ece4e4;
+				}
+			}
+			ul:last-child {
+				margin-top: 0px;
+				margin-bottom: 0px;
+			}
+		}
+	}
+}
+
+/*  Ancho menor a 767px */
+@media only screen and (min-width:767px) {
+	#menu {
+		position: absolute;
+		top: 0;
+		left: 180px;
+		ul {
+			width: initial!important;
+		}
+	}
+	nav #menu .colapsar {
+		overflow: visible!important;
+	}
+	nav #menu .colapsar ul {
+		display:inline-block;
+		li {
+			float: left;
+		    display: inline-block;
+		    width: initial!important;
+		    a {
+				font-size: 14px;
+			}
+		}    
+	}
+	header nav #menu .colapsar ul li a {
+		line-height: 58px;
+	}
+	#desplegar-menu {
+		visibility: hidden;
+	}
+}	
+
+/*  Ancho menor a 992px */
+@media only screen and (min-width:992px) {
+	nav #menu .colapsar ul li a {
+		font-size: 16px;
+	}
+}	

@@ -1,0 +1,13 @@
+/* Definimos Propiedades para el Body */
+body {
+	font-family: Arial;
+	a, a:hover {
+		text-decoration: none;
+		color: #7E7E7E;
+		display: inline-block;
+	}
+	ul {
+		padding: 0;
+		margin: 0;
+	}
+}

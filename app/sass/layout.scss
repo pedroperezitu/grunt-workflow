@@ -1,0 +1,13 @@
+/* Versión 1.0.0, Febrero de 2016. */
+
+/* Normalizamos todos las propiedades CSS por defecto. */
+@import "partials/normalize";
+
+/* Importamos hojas de estilos externas con variables y mixins. */
+@import "partials/grid";
+@import "partials/mixins";
+
+/* Importamos hojas de estilos externas para nuestro sitio u app. */
+@import "partials/body";
+@import "partials/header";
+@import "partials/content";

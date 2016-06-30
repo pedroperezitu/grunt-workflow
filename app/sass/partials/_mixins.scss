@@ -1,0 +1,51 @@
+/*Border Radius*/
+@mixin border-radius($radius) {
+	-webkit-border-radius: $radius;
+	-moz-border-radius: $radius;
+	-ms-border-radius: $radius;
+	-o-border-radius: $radius;
+	border-radius: $radius;
+}
+
+/*Border Tipografia completa*/
+@mixin fuente-base($familia, $tamano, $color) {
+	font-family: $familia;
+	font-size: $tamano;
+	color: $color;
+}
+
+/*Transiciones basicas*/
+@mixin trancisiones($fondo, $duracion, $tipo) {
+	-webkit-transition: $fondo $duracion $tipo;
+	-moz-transition: $fondo $duracion $tipo;
+	-ms-transition: $fondo $duracion $tipo;
+	-o-transition: $fondo $duracion $tipo;
+	transition: $fondo $duracion $tipo;
+}
+
+/*Opacidad*/
+@mixin opacity($value) {
+	$IEValue: $value*100;
+	opacity: $value;
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity="+$IEValue+")";
+	filter: progid:DXImageTransform.Microsoft.Alpha(opacity=0);
+}
+
+/*Text-Shadow*/
+@mixin text-shadow($h-shadow, $v-shadow, $blur, $color) {
+	text-shadow: $h-shadow $v-shadow $blur $color;
+}
+
+/*Boxshadow*/
+@mixin box-shadow($top, $left, $blur, $color, $inset: false) {
+	@if $inset {
+		-webkit-box-shadow: inset $top $left $blur $color;
+		-moz-box-shadow: inset $top $left $blur $color;
+		box-shadow: inset $top $left $blur $color;
+		} 
+	@else {
+		-webkit-box-shadow: $top $left $blur $color;
+		-moz-box-shadow: $top $left $blur $color;
+		box-shadow: $top $left $blur $color;
+	}	
+}	
